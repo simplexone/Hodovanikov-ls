@@ -111,6 +111,7 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
       noInfo: false,
       overlay: true,
+      host: '192.168.0.46',
     },
     performance: {
       hints: false,
