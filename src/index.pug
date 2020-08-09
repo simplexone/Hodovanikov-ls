@@ -25,3 +25,30 @@ block content
         
         .hero__buttom-buttons
           button.scroll-down__btn Скролл  
+    section.about
+      .container.about__container
+          .about__user
+            .user
+              .user__avatar
+                .user__avatar-wrapper
+                  +image('content/user.jpg', 'user__avatar-pic')
+              .user__about
+                - 
+                  var userinfo = [
+                    ['Проживаю:', "Новосибирск"],
+                    ['Возраст:', "27 лет"],
+                    ['Родился:', "1 января 1991"],
+                  ];
+                table.user__table
+                  each item in userinfo
+                    tr
+                      td.user__table-title #{item[0]}
+                      td.user__table-content #{item[1]}
+          .about__user-text
+            .about__main-text-content
+              .about__desc Привет, меня зовут
+              .about__title Владимир Астаханов
+              .about__text-info
+                p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            .about__ps
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
