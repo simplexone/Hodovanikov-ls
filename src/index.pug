@@ -5,7 +5,7 @@ block content
     section.hero
       .container.hero__container
         header.header
-          a.logo(href="#") ВА
+          a.logo(href="#") АГ
           nav.menu
             - var menuItems =["Обо мне", "Навыки", "Работы", "Отзывы"]
             ul.menu__list
@@ -21,7 +21,7 @@ block content
 
         .userinfo
           .userinfo__title Личный сайт #[br] веб разработчика
-          .userinfo__name Владимир Астаханов     
+          .userinfo__name Антон Годоваников     
         
         .hero__buttom-buttons
           button.scroll-down__btn Скролл  
@@ -35,9 +35,9 @@ block content
               .user__about
                 - 
                   var userinfo = [
-                    ['Проживаю:', "Новосибирск"],
-                    ['Возраст:', "27 лет"],
-                    ['Родился:', "1 января 1991"],
+                    ['Проживаю:', "Николаев"],
+                    ['Возраст:', "26 лет"],
+                    ['Родился:', "30 апреля 1994"],
                   ];
                 table.user__table
                   each item in userinfo
@@ -47,8 +47,48 @@ block content
           .about__user-text
             .about__main-text-content
               .about__desc Привет, меня зовут
-              .about__title Владимир Астаханов
+              .about__title Антон
               .about__text-info
-                p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                p Я занимаюсь разработкой современных сайтов и приложений. Мне интересно делать что-то новое.
             .about__ps
-              | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите!
+
+  .triangles.triangles_top
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+      polygon(points="0,0 0,100 1000,100")
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+      polygon(points="0,100 1000,100 1000,0")
+
+  .middle-section
+    section.values
+      .container.values__container
+        .values__wrapper
+          .values__title
+            .values__title-container
+              .values__title-text Чем я могу быть полезен вам
+              .values__content
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите!
+          .values__widget
+            .values__widget-container
+              - 
+                var skillsCategories = [
+                  ["Frontend", ["HTML5", "CSS3", "Javascript", "Vue.js"]],
+                  ["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]
+                ];
+
+              ul.skills
+                each category in skillsCategories
+                  li.skills__item(v-for="category in categories")
+                    .skills-row
+                      .skills-row__title #{category[0]}
+                      ul.skills-row__list
+                        each skill in category[1]
+                          li.skills-row__item
+                            .skill
+                              svg(viewBox="0 0 100 100").skill__circle-shape
+                                circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                                circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle_above
+                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                                  stop(offset="0%" stop-color="#5500f2")
+                                  stop(offset="100%" stop-color="#8f00ef")
+                              .skill__circle-text #{skill}    
