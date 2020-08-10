@@ -98,7 +98,7 @@ block content
         .section-title.works__section-title Мои работы
         .works__content
           .works-slider
-            .works-slider__pics(data-slide="2")
+            .works-slider__pics(data-slide="1")
               .works-slider__pics-content
                 +image('content/slider-1.jpg', 'works-slider__fullpic')
                 .works-slider__buttons
@@ -126,3 +126,27 @@ block content
       polygon(points="0,0 1000,0 1000,100")
     svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
       polygon(points="0,0 0,100 1000,0")
+
+  section.contacts
+    .container.contacts__container
+      .contacts__about
+        .reviews
+          .reviews__header
+            .reviews__title.section-title Что обо мне говорят
+            .reviews__buttons
+              .reviews__btn.reviews__btn_prev
+              .reviews__btn.reviews__btn_next
+          ul.reviews__content
+            - for (var i = 0; i < 2; i++)
+              li.reviews__content-item
+                .quote
+                  .quote__text
+                    p Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .quote__user
+                    .user-min
+                      .user-min__avatar
+                        .user-min__pic-wrapper
+                          +image(`content/user2.jpg`, 'user-min__avatar-pic')
+                      .user-min__info
+                        .user-min__name Ковальчук Дмитрий
+                        .user-min__occ Основатель Loftschool    
