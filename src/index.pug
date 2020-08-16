@@ -5,27 +5,28 @@ block content
     section.hero
       .container.hero__container
         header.header
-          a.logo(href="#") АГ
+          .logo АГ
           nav.menu
-            - var menuItems =["Обо мне", "Навыки", "Работы", "Отзывы"]
+            - var menuItems =[{title: 'Обо мне',anchor: '#about'},{title: 'Навыки',anchor: '#skils'},{title:'Работы',anchor: '#work'},{title:'Отзывы',anchor: '#reviews'}]
             ul.menu__list
               each item in menuItems  
                 li.menu__item
-                  a(href="#").menu__link #{item}
+                  a(href=`${item.anchor}`).menu__link #{item.title}
           - var socials = ["insta", "vk", "github", "envelope"]
+          //- - var socials =[{link: 'www.instagram.com',icon: 'insta'},{link: 'vk.com',icon: 'vk'},{link:'github.com',icon: 'github'},{link:'gmail.com',icon: 'envelope'}]
           ul.socials
             each item in socials
               li.socials__item
-              a(href="#").socials__link
-                +icon(item, "socials__icon")
+                a(href="#" target="_blank").socials__link
+                  +icon(item, "socials__icon")
 
         .userinfo
           .userinfo__title Личный сайт #[br] веб разработчика
           .userinfo__name Антон Годоваников     
         
         .hero__buttom-buttons
-          button.scroll-down__btn Скролл  
-    section.about
+          a(href='#about').scroll-down Скролл  
+    section.about(id='about')
       .container.about__container
           .about__user
             .user
@@ -60,7 +61,7 @@ block content
       polygon(points="0,100 1000,100 1000,0")
 
   .middle-section
-    section.values
+    section.values(id='skils')
       .container.values__container
         .values__wrapper
           .values__title
@@ -93,7 +94,7 @@ block content
                                   stop(offset="100%" stop-color="#8f00ef")
                               .skill__circle-text #{skill}    
 
-  section.works
+  section.works(id='work')
       .container.works__container
         .section-title.works__section-title Мои работы
         .works__content
@@ -102,12 +103,12 @@ block content
               .works-slider__pics-content
                 +image('content/slider-1.jpg', 'works-slider__fullpic')
                 .works-slider__buttons
-                  a(href="#").works-slider__btn.works-slider__btn_next
-                  a(href="#").works-slider__btn.works-slider__btn_prev
+                  button(href="#").works-slider__btn.works-slider__btn_next
+                  button(href="#").works-slider__btn.works-slider__btn_prev
                 ul.works-slider__thumbs
                   - for (var i = 4; i > 0; i--)
                     li.works-slider__thumb-item(class=`${i === 1 ? 'active' : ''}`)
-                      a(href="").works-slider__thumb-link
+                      button(href="").works-slider__thumb-link
                         +image(`content/slider-${i}.jpg`, 'works-slider__thumb')
             .works-slider__data
               ul.works-slider__tags
@@ -119,7 +120,7 @@ block content
               .works-slider__desc
                 p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
               .works-slider__link 
-                a(href="").iconed-link Посмотреть сайт
+                a(href="https://loftschool.com/" target="_blank").iconed-link Посмотреть сайт
 
   .triangles.triangles_bottom
     svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
@@ -127,15 +128,15 @@ block content
     svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
       polygon(points="0,0 0,100 1000,0")
 
-  section.contacts
+  section.contacts(id='reviews')
     .container.contacts__container
       .contacts__about
         .reviews
           .reviews__header
             .reviews__title.section-title Что обо мне говорят
             .reviews__buttons
-              .reviews__btn.reviews__btn_prev
-              .reviews__btn.reviews__btn_next
+              button.reviews__btn.reviews__btn_prev
+              button.reviews__btn.reviews__btn_next
           ul.reviews__content
             - for (var i = 0; i < 2; i++)
               li.reviews__content-item
@@ -164,7 +165,7 @@ block content
           ul.menu__list
             each item in menuItems 
               li.menu__item
-                a(href="#").menu__link #{item}
+                a(href=`${item.anchor}`).menu__link !{item.title}
         .footer__data-content
           .footer__data-col
             .footer__data-text

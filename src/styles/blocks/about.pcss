@@ -1,7 +1,8 @@
 .about__container {
   display: flex;
-  padding: 50px 0 268px;
+  padding: 275px 0;
   justify-content: space-between;
+  max-width: 1040px;
 }
 
 .about__user {
@@ -12,20 +13,31 @@
   color: rgba($text-color);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 56%;
+  width: 64%;
+  padding-left: 50px;    
+
 }
 
+.about__main-text-content{
+  margin-bottom: 69px;
+}
+
+.about__text-info{
+  line-height: 30px;
+  font-weight: 600;
+}
 
 
 .about__desc {
   font-weight: 600;
   margin-bottom: 20px;
+  color: rgba($text-color, 0.8);
 }
 
 .about__title {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 36px;
+  line-height: 49px;
   margin-bottom: 30px;
   color: $text-color;
 }
@@ -33,5 +45,20 @@
 .about__ps {
   font-style: italic;
   margin-bottom: 36px;
-  color: rgba($text-color, 0.5)
+  color: rgba($text-color, 0.8);
+  line-height: 30px;
+  position: relative;
+  
+  &:before {
+    content: "*";
+    position: absolute;
+    top: -12%;
+    left: -6%;
+    color: rgba(219, 2, 0, 0.5);
+    font-family: Open Sans;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 65px;
+  }
 }
