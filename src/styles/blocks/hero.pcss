@@ -6,7 +6,25 @@
     padding: 60px 0;
 }
 
+.hero__content {
+  flex: .8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24%;
+
+  @include desktop {
+    padding: 0 10%;
+  }
+  @include tablets{
+    padding-bottom: 30%; 
+  }
+}
+
 .hero__buttom-buttons {
     display: flex;
     justify-content: center;
+    @include tablets {
+        display: none;
+    }
 }

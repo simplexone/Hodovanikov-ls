@@ -4,12 +4,40 @@
     align-items: center;
     color: $text-color;
 
+    @include desktop {
+        justify-content: space-between;
+        flex-direction: row;
+        /* flex-wrap: nowrap; */
+    }
+
+    @include tablets {
+        flex-direction: column;
+    }
+
     &__title {
         font-weight: 600;
         font-size: 18px;
         max-width: 165px;
         text-align: center;
         color: rgba(70, 78, 98, 0.5);
+
+        @include desktop {
+            text-align: right;
+            margin-bottom: 0;
+            padding-bottom: 30px;
+            margin-right: 5%;
+        }
+
+        @include tablets {
+            text-align: center;
+            margin-right: 0;
+        }
+
+        @include phones {
+            font-size: 14px;
+            padding: 0;
+            margin-bottom: 7px;
+        }
     }
 
     &__name {
@@ -17,5 +45,11 @@
         font-size: 72px;
         max-width: 427px;
         line-height: 60px;
+
+        @include phones {
+            font-size: 36px;
+            line-height: 48px;
+            /* text-align: center; */
+        }
     }
 }

@@ -13,16 +13,20 @@ block content
                 li.menu__item
                   a(href=`${item.anchor}`).menu__link #{item.title}
           - var socials = ["insta", "vk", "github", "envelope"]
-          //- - var socials =[{link: 'www.instagram.com',icon: 'insta'},{link: 'vk.com',icon: 'vk'},{link:'github.com',icon: 'github'},{link:'gmail.com',icon: 'envelope'}]
-          ul.socials
-            each item in socials
-              li.socials__item
-                a(href="#" target="_blank").socials__link
-                  +icon(item, "socials__icon")
+          //- - var socials =[{link: 'www.instagram.com', icon: 'insta'},{link: 'vk.com', icon: 'vk'},{link:'github.com', icon: 'github'},{link:'gmail.com', icon: 'envelope'}]
+          .header__buttons
+            ul.socials
+              each item in socials
+                li.socials__item
+                  a(href="#" target="_blank").socials__link
+                    +icon(item, "socials__icon")
+            .hamburger-menu-link
+                .hamburger-menu-link__bars
 
-        .userinfo
-          .userinfo__title Личный сайт #[br] веб разработчика
-          .userinfo__name Антон Годоваников     
+        .hero__content
+          .userinfo
+            .userinfo__title Личный сайт #[br] веб разработчика
+            .userinfo__name Антон Годоваников     
         
         .hero__buttom-buttons
           a(href='#about').scroll-down Скролл  
