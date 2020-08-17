@@ -3,10 +3,19 @@
   padding: 275px 0;
   justify-content: space-between;
   max-width: 1040px;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 129px;
+  }
 }
 
 .about__user {
   width: 36%;
+  @include phones{
+    width: 100%;
+    margin-bottom: 45px;
+  }
 }
 
 .about__user-text {
@@ -14,12 +23,22 @@
   display: flex;
   flex-direction: column;
   width: 64%;
-  padding-left: 50px;    
+  padding-left: 50px;
+  @include phones {
+    padding: 0;
+    width: 95%;
+  }
 
 }
 
 .about__main-text-content{
   margin-bottom: 69px;
+  @include tablets {
+    margin-bottom: 36px;
+  }
+  @include phones {
+    margin-bottom: 70px;
+  }
 }
 
 .about__text-info{
@@ -32,6 +51,9 @@
   font-weight: 600;
   margin-bottom: 20px;
   color: rgba($text-color, 0.8);
+  @include phones{
+    margin-bottom: 5px;
+  }
 }
 
 .about__title {
@@ -40,6 +62,10 @@
   line-height: 49px;
   margin-bottom: 30px;
   color: $text-color;
+  @include phones {
+    line-height: 36px;
+    margin-bottom: 38px;
+  }
 }
 
 .about__ps {
@@ -53,12 +79,18 @@
     content: "*";
     position: absolute;
     top: -12%;
-    left: -6%;
+    left: -7%;
     color: rgba(219, 2, 0, 0.5);
     font-family: Open Sans;
     font-style: italic;
     font-weight: normal;
     font-size: 48px;
     line-height: 65px;
+    @include phones {
+      line-height: 49px;
+      font-size: 36;
+      top: 3%;
+      left: -13%;
+    }
   }
 }

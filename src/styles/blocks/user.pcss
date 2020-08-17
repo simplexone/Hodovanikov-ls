@@ -1,7 +1,21 @@
+.user {
+  @include phones {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+  }
+}
+
 .user__avatar {
   display: flex;
   justify-content: center;
   margin-bottom: 70px;
+  @include tablets {
+    margin-bottom: 21px;
+  }
+  @include phones {
+    margin-bottom: 42px;
+  }
 }
 
 .user__avatar-wrapper {
@@ -12,6 +26,12 @@
   box-shadow: 0px 10px 24px 0 rgba(#000, .3);
   margin: 0 70px;
   flex-shrink: 0;
+}
+
+.user__about {
+  @include phones {
+    padding-left: 20px;
+  }
 }
 
 .user__table {
