@@ -8,6 +8,9 @@
 .footer__container {
   display: flex;
   justify-content: space-between;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .footer__copyright {
@@ -15,15 +18,34 @@
   display: flex;
   color: rgba(#fff, .1);
   justify-content: space-between;
+  @include desktop {
+    flex-direction: column;
+  }
+  @include tablets {
+    justify-content: flex-start;
+  }
+  @include phones {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 .footer__copyright-col {
   flex: 1;
+  @include tablets {
+    flex: initial;
+  }
 }
 
 .footer__copyright-userinfo {
   width: 44%;
   padding-top: 9px;
+  @include tablets {
+    width: 60%;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .footer__copyright-name {
@@ -44,17 +66,29 @@
 
 .footer__data-text {
   margin-bottom: 25px;
+  @include tablets {
+    margin-bottom: 21px;
+  }
 }
 
 .footer__data {
   width: 66%;
   padding-top: 7px;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .footer__data-menu {
   margin-bottom: 60px;
+  @include tablets {
+    margin-bottom: 35px;
+  }
   .menu__list {
     justify-content: flex-start;
+    @include tablets {
+      flex-wrap: wrap;
+    }
   }
   .menu__item {
     margin-right: 6%;
@@ -64,8 +98,22 @@
 .footer__data-content {
   display: flex;
   justify-content: space-between;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .footer__data-col {
   width: 46%;
+  @include tablets {
+    width: 100%;
+    margin-bottom: 60px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include phones {
+    margin-bottom: 45px;
+  }
 }
