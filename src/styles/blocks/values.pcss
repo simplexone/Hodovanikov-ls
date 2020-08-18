@@ -1,11 +1,18 @@
 .values {
   margin-bottom: 114px;
-
+  @include tablets {
+    margin: 0;
+  }
 }
 
 .values__container {
   position: relative;
   padding: 145px 0;
+  
+  @include tablets{
+    padding: 89px 0;
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -15,6 +22,9 @@
     height: 79%;
     width: 69%;
     left: -25%;
+    @include tablets {
+      display: none;
+    }
   }
 }
 
@@ -26,17 +36,36 @@
   margin-bottom: 82px;
   display: flex;
   justify-content: center;
+
+  @include tablets{
+    margin-bottom: 50px;
+  }
 }
 
 .values__title-container {
   width: 38%;
   margin-left: 6%;
+  @include tablets {
+    width: 100%;
+    text-align: center;
+    padding: 0 26%;
+    margin: 0;
+  }
+
+  @include phones {
+    width: inherit;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .values__title-text {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 55px;
+  @include tablets{
+    margin-bottom: 28px;
+  }
 }
 
 .values__content {
@@ -48,8 +77,32 @@
 .values__widget {
   display: flex;
   justify-content: flex-end;
+  @include tablets {
+    justify-content: center;
+    margin-bottom: 105px;
+  }
+  @include phones {
+    margin-bottom: 0;
+  }
 }
 
 .values__widget-container {
   width: 66%;
+  @include tablets {
+    width: 75%;
+
+  }
+
+  @include phones {
+    width: inherit;
+  }
+}
+
+.values__bag {
+  display: none;
+  @include tablets {
+    display: block;
+    max-width: 278px;
+    margin: 0 auto;
+  }
 }
