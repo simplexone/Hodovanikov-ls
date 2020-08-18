@@ -1,6 +1,9 @@
 .quote {
-  padding-left: 24%;
+  padding-left: 19%;
   position: relative;
+  @include phones {
+    padding-left: 0;
+  }
 
   &:before {
     content: "";
@@ -12,12 +15,21 @@
     position: absolute;
     top: 0;
     left: 0;
+    @include tablets {
+      width: 37px;
+      height: 27px;
+      top: 4%;
+      left: 1%;
+    }
+    @include phones {
+      display: none;
+    }
   }
 }
 
 .quote__text {
   margin-bottom: 30px;
-  color: rgba($text-color, .5);
+  color: rgba($text-color, .8);
   font-weight: 600;
   line-height: 1.8;
 }

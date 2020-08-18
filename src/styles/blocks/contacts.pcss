@@ -7,10 +7,16 @@
 
 .contacts__about {
   margin-bottom: 190px;
+  @include phones {
+    margin-bottom: 0;
+  }
 }
 
 .contacts__container {
   padding-right: 12%;
+  @include phones {
+    padding: 0;
+  }
 }
 
 .contacts__form {

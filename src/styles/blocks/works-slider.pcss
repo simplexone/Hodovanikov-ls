@@ -101,9 +101,12 @@
 
 .works-slider__buttons {
   position: absolute;
-  top: 73%;
+  top: 100%;
   right: 0;
   display: flex;
+  @include phones {
+    top: 73%;
+  }
 }
 
 .works-slider__btn {
