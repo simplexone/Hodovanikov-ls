@@ -10,7 +10,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = "/";
+  const publicPath = "/Hodovanikov-ls/";
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -111,6 +111,7 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
       noInfo: false,
       overlay: true,
+      host: '192.168.0.46',
     },
     performance: {
       hints: false,
