@@ -1,4 +1,149 @@
-.works-slider {
+.works__title-wrap {
+  margin-bottom: 80px;
+}
+
+.works__title {
+  font-size: 36px;
+  line-height: 49px;
+  color: #464E62;
+  font-weight: 600;
+}
+
+.works__content {
+  display: flex;
+}
+
+.works__pictures {
+  width: 60%;
+  margin-right: 5%;
+  position: relative;
+  height: 100%
+}
+
+.works__image-wrap {
+  width: 100%;
+  height: 360px;
+  position: relative;
+}
+
+.works__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.works__index-wrap {
+  position: absolute;
+  font-weight: 800;
+  font-size: 250px;
+  line-height: 48px;
+  color: #DDE3EC;
+  top: 67%;
+  right: 11%;
+}
+
+.works__preview {
+  position: absolute;
+  bottom: 0%;
+  right: 24%;
+}
+
+.works__preciew_list{
+  display: flex;
+  height: 70px;
+  flex-direction: column;
+}
+
+.works__prevew_item {
+  height: 80px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active {
+  outline: 3px solid orange;
+  position: relative;
+  z-index: 5;
+}
+
+.works__prevew_image{
+  &:hover {
+    outline: 3px solid orange
+  }
+}
+
+.works__btn-wrap{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: -20%;
+  right: 27%;
+  transform: rotate(90deg);
+}
+
+.works__btn{
+  color: #fff;
+  background: #252830;
+  width: 50px;
+  height: 50px;
+  &:hover {
+    background: orange;
+  }
+  &:disabled {
+    background: gray;
+  }
+}
+
+.works__info {
+  width: 40%;
+
+}
+
+.works__info-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+
+}
+
+.works__info-tag-item{
+  padding: 14px 22px;
+  border-radius: 40px;
+  background: #F3F6F9;
+  margin-right: 8px;
+}
+
+.works__info-title {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.works__info_title-wrap {
+  margin-bottom: 30px;
+}
+
+.works__info_desc {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  color: rgba($text-color, 0.8);
+  margin-bottom: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* .works-slider {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -216,5 +361,5 @@
     text-align: start;
   }
 }
-
+ */
 

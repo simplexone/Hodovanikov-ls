@@ -1,0 +1,60 @@
+script(type="text/x-template")#works__content
+    div
+        .works__title-wrap
+            h1.works__title.title Мои работы
+        .works__content 
+            pictures(
+                :currentIndex="currentIndex"
+                :works="works"
+                :currentWork="currentWork"
+                @slide="changeSlide"
+            )
+            info(
+                :currentWork="currentWork"
+            )
+
+script(type="text/x-template")#works__pictures
+    .works__pictures
+        .works__image-wrap
+            img(:src="currentWork.photo").works__image
+        .works__index-wrap
+            .works__index {{currentIndex+1}}
+        preview(
+            :works="works"
+            :currentIndex="currentIndex"
+            :currentWork="currentWork"
+            @slide="handleSlide"
+        )
+
+script(type="text/x-template")#works__preview
+    div
+        .works__preview
+            ul.works__preview_list
+                li.works__prevew_item(v-for="work in works")
+                   img(:src="work.photo" :class=`{active:currentWork.id === work.id}`).works__prevew_image
+        btns(
+            :currentIndex="currentIndex"
+            :works="works"
+            @changeSlide="slideWork"
+        )
+
+script(type="text/x-template")#works__btns  
+    .works__btn-wrap 
+        button(@click="slide('next')" :disabled='disebleNext').works__btn.works__btn-next >
+        button(@click="slide('prev')" :disabled='diseblePrev').works__btn.works__btn-prev <
+
+script(type="text/x-template")#works__info 
+    .works__info 
+        tags(:currentTags="currentWork.skills")
+        .works__info_title-wrap
+            .works__info-title {{currentWork.title}}
+        .works__info_desc
+            p {{currentWork.desc}}
+        .works__info_link
+            a(href='#').iconed-link Посмотреть сайт
+
+script(type="text/x-template")#works__tags
+    ul.works__info-tag-list
+        li.works__info-tag-item(v-for="tag in tags")
+            .tag {{tag}}
+

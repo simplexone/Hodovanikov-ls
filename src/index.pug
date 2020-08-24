@@ -81,31 +81,8 @@ block content
                 +image(`decor/bag.jpg`, 'values__bag-pic')
   section.works(id='work')
       .container.works__container
-        .section-title.works__section-title Мои работы
-        .works__content
-          .works-slider
-            .works-slider__pics(data-slide="1")
-              .works-slider__pics-content
-                +image('content/slider-1.jpg', 'works-slider__fullpic')
-                .works-slider__buttons
-                  button(href="#").works-slider__btn.works-slider__btn_next
-                  button(href="#").works-slider__btn.works-slider__btn_prev
-                ul.works-slider__thumbs
-                  - for (var i = 4; i > 0; i--)
-                    li.works-slider__thumb-item(class=`${i === 1 ? 'active' : ''}`)
-                      button(href="").works-slider__thumb-link
-                        +image(`content/slider-${i}.jpg`, 'works-slider__thumb')
-            .works-slider__data
-              ul.works-slider__tags
-                - var tags = ['HTML', 'CSS', 'JavaScript'];
-                each item in tags
-                  li.works-slider__tag-item 
-                    .tag #{item}
-              .works-slider__title Сайт школы образования
-              .works-slider__desc
-                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              .works-slider__link 
-                a(href="https://loftschool.com/" target="_blank").iconed-link Посмотреть сайт
+        #works__container
+        
 
   .triangles.triangles_bottom
     svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
