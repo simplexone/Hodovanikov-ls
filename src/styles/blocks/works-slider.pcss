@@ -1,5 +1,21 @@
+.works__container {
+  @include phones {
+    width: 100%
+  }
+}
+
+.works__wrap {
+  padding: 10% 0;
+}
+
 .works__title-wrap {
   margin-bottom: 80px;
+  @include tablets {
+    margin-bottom: 48px;
+  }
+  @include phones {
+    text-align: center;
+  }
 }
 
 .works__title {
@@ -11,13 +27,27 @@
 
 .works__content {
   display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .works__pictures {
   width: 60%;
   margin-right: 5%;
   position: relative;
-  height: 100%
+  height: 100%;
+  @include desktop {
+    margin-right: 13%;
+  }
+  @include tablets {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 65px;
+  }
+  @include phones {
+    max-height: 205px;
+  }
 }
 
 .works__image-wrap {
@@ -35,17 +65,42 @@
 .works__index-wrap {
   position: absolute;
   font-weight: 800;
-  font-size: 250px;
+  font-size: 400px;
   line-height: 48px;
   color: #DDE3EC;
-  top: 67%;
-  right: 11%;
+  top: 38%;
+  right: 2%;
+  z-index: -10;
+  @include desktop {
+    font-size: 300px;
+    line-height: 48px;
+    top: 48%;
+    right: -24%;
+  }
+  @include tablets {
+    top: 61%;
+    right: -5%;
+  }
+  @include phones {
+    display: none;
+  }
 }
 
 .works__preview {
   position: absolute;
   bottom: 0%;
   right: 24%;
+  @include desktop {
+    bottom: 1.5%;
+    right: 0;
+  }
+  @include tablets {
+    right: 23%;
+    bottom: 0;
+  }
+  @include phones {
+    display: none;
+  }
 }
 
 .works__preciew_list{
@@ -58,6 +113,9 @@
   height: 80px;
   &:hover {
     cursor: pointer;
+  }
+  @include desktop {
+    height: 65px;
   }
 }
 
@@ -77,9 +135,21 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: -20%;
+  bottom: -21%;
   right: 27%;
   transform: rotate(90deg);
+  @include desktop{
+    bottom: -19.5%;
+    right: 4%;
+  }
+  @include tablets { 
+    right: 26%;
+    bottom: -20.5%;
+  }
+  @include phones {
+    right: 6%;
+    bottom: -12.5%;
+  }
 }
 
 .works__btn{
@@ -97,7 +167,15 @@
 
 .works__info {
   width: 40%;
+  @include tablets{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @include phones {
 
+  }
 }
 
 .works__info-tag-list {
@@ -118,10 +196,15 @@
   font-weight: bold;
   font-size: 30px;
   line-height: 41px;
+  @include phones {
+    text-align: start;
+    padding: 0 10%;
+  }
 }
 
 .works__info_title-wrap {
   margin-bottom: 30px;
+  
 }
 
 .works__info_desc {
@@ -130,236 +213,14 @@
   line-height: 30px;
   color: rgba($text-color, 0.8);
   margin-bottom: 45px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* .works-slider {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  @include tablets {
-    flex-direction: column;
-    align-items: inherit;
-  }
-}
-
-.works-slider__pics {
-  width: 66%;
-  position: relative;
-  z-index: 10;
-  height: 610px;
-  margin-right: 10%;
-  @include tablets {
-    width: 90%;
-    margin-right: 0;
-    height: 465px;
-    margin-bottom: 20px;
-  }
-  @include phones {
-    height: 208px;
-    width: 118%;
-    margin-bottom: 60px;
-  }
-
-  &:before {
-    content: attr(data-slide);
-    position: absolute;
-    top: 40%;
-    transform: translateY(-60%);
-    line-height: 1;
-    left: 100%;
-    font-size: 300px;
-    font-weight: 800;
-    margin-left: -8%;
-    color: rgba($text-color, .2);
-    z-index: -10;
-    @include tablets{
-      top: 70%;
-      margin-left: -6%;
-    }
-    @include phones{
-      display: none;
-    }
-  }
-}
-
-.works-slider__pics-content {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  @include phones {
-    right: 28px;
-  }
-}
-
-.works-slider__fullpic-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%; 
-}
-
-.works-slider__fullpic {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.works-slider__thumbs {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 178px;
-  @include phones {
-    display: none;
-  }
-
-}
-
-.works-slider__thumb-item {
-  height: 75px;
-  transition: .2s;
-  &.active,
-  &:hover {
-    outline: 3px solid #f29400;
-  }
-}
-
-.works-slider__thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.works-slider__buttons {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  display: flex;
-  @include phones {
-    top: 73%;
-  }
-}
-
-.works-slider__btn {
-  width: 50px;
-  height: 50px;
-  background: #2d3c4e;
-  display: block;
-  position: relative;
-  @include phones {
-    width: 55px;
-    height: 55px;
-  }
-  &:before {
-    content: "";
-    background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
-    display: block;
-    width: 8px;
-    height: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    transition: opacity .3s, margin-top .3s;
-    opacity: .3;
-  }
-  &:hover {
-    &:before {
-      opacity: 1;
-    }
-  }
-  &_prev {
-    &:before {
-      transform: translate(-50%, -50%) rotate(-270deg);
-    }
-    &:active {
-      &:before {
-        margin-top: 3px;
-      }
-    }
-  }
-  &_next {
-    &:active {
-      &:before {
-        margin-top: -3px;
-      }
-    }
-  }
-}
-
-.works-slider__data {
-  width: 24%;
-  @include tablets {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 147px;
-  }
-  @include phones {
-    padding: 0;
-  }
-}
-
-.works-slider__thumb-link {
-    display: block;
-    height: 100%;
-    background: transparent;
-    padding: 0;
-}
-
-.works-slider__tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 26px;
-    @include tablets {
-      margin-bottom: 21px;
-    }
-}
-
-.works-slider__tag-item {
-    margin-right: 15px;
-    margin-bottom: 15px;
-    background: #F3F6F9;
-    border-radius: 40px; 
-    padding: 10px;
-}
-
-.works-slider__title {
-  font-size: 30px;
-  margin-bottom: 42px;
-  font-weight: bold;
-  @include tablets {
-    margin-bottom: 12px;
-  }
-}
-
-.works-slider__desc {
-  font-weight: 600;
-  color: rgba($text-color, .7);
-  line-height: 1.8;
-  margin-bottom: 38px;
-  @include tablets {
+  @include tablets{
     text-align: center;
-    margin-bottom: 25px;
+    padding: 0 13%;
   }
   @include phones {
     text-align: start;
+    padding: 0 10%;
   }
 }
- */
+
 

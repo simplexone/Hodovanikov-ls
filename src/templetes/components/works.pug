@@ -1,5 +1,5 @@
 script(type="text/x-template")#works__content
-    div
+    .works__wrap
         .works__title-wrap
             h1.works__title.title Мои работы
         .works__content 
@@ -27,7 +27,7 @@ script(type="text/x-template")#works__pictures
         )
 
 script(type="text/x-template")#works__preview
-    div
+    .works__preview-wrap
         .works__preview
             ul.works__preview_list
                 li.works__prevew_item(v-for="work in works")
